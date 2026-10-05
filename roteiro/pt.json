@@ -1,0 +1,101 @@
+[
+  {
+    "chapter": "Abertura",
+    "title": "O Claude Code que você mesmo muda",
+    "kind": "hook",
+    "labels": ["Claude Mods", "lançado em 1º de outubro", "você descreve, o Claude constrói", "dentro do próprio Claude Code"],
+    "takeaway": "Se você consegue descrever uma função, o Claude Code consegue construí-la dentro dele mesmo.",
+    "source": "https://www.youtube.com/watch?v=LDn7rQKIFro",
+    "speech": "E se o Claude Code tivesse exatamente o botão, o painel ou o atalho que você sempre quis? Agora ele pode ter. No dia primeiro de outubro chegaram os Mods do Claude Code. A ideia é simples: você descreve uma função que gostaria de ter, e o próprio Claude Code constrói essa função dentro dele mesmo. Eu sou Nei Maldaner, e neste vídeo eu explico o que é um mod, como ele funciona por dentro, o que dá para fazer com ele e como criar o seu, com os cuidados que valem a pena."
+  },
+  {
+    "chapter": "O que é",
+    "title": "Um mod é um pequeno complemento",
+    "kind": "concept",
+    "labels": ["muda a aparência", "muda o comportamento", "terminal e aba Code do app", "não funciona no chat"],
+    "takeaway": "Mod é um complemento que muda como o Claude Code aparece e como ele trabalha.",
+    "source": "https://www.youtube.com/watch?v=LDn7rQKIFro",
+    "speech": "Um mod é um pequeno complemento que muda duas coisas: como o Claude Code aparece na sua tela e como ele trabalha. Ele roda no terminal e também na aba de código do aplicativo de desktop. Atenção a um detalhe: no chat comum do Claude, ele não funciona. Mod é coisa do Claude Code. Se você já atualizou o seu, o recurso já está lá, pronto para usar, sem nada para instalar à parte."
+  },
+  {
+    "chapter": "O que é",
+    "title": "Skill, conector e mod",
+    "kind": "compare",
+    "labels": ["Skill: ensina como fazer", "Conector: liga a outro app", "Mod: roda dentro do Claude Code", "pode mudar a própria tela"],
+    "takeaway": "Skill e conector agem de fora; o mod age de dentro.",
+    "source": "https://www.youtube.com/watch?v=LDn7rQKIFro",
+    "speech": "Talvez você pense: mas eu já tenho skills e conectores. Tem, e eles continuam úteis. Só que eles agem de fora. A skill ensina o Claude a fazer uma tarefa. O conector liga o Claude a outro aplicativo. O mod é diferente: ele roda dentro do próprio Claude Code. Por isso ele consegue mexer no que você vê. Dá para colocar um botão, abrir um painel do lado, criar uma faixa acima do campo de digitação, mostrar um aviso, criar um comando novo com barra, e até um joguinho para passar o tempo enquanto o Claude trabalha."
+  },
+  {
+    "chapter": "Por dentro",
+    "title": "Tudo é evento",
+    "kind": "diagram",
+    "labels": ["Claude age", "dispara um evento", "o mod observa", "o mod altera", "o mod responde sozinho"],
+    "takeaway": "Um mod escuta eventos e decide: observar, alterar ou assumir.",
+    "source": "https://www.youtube.com/watch?v=LDn7rQKIFro",
+    "speech": "Como um mod consegue mudar a tela? Cada vez que o Claude faz alguma coisa, como rodar um comando, chamar uma ferramenta ou receber o seu pedido, ele emite um sinal, um evento. O mod é um pedacinho de código que fica escutando esses eventos. Quando um evento chega, ele tem três caminhos. Pode só observar e seguir em frente. Pode alterar o evento antes que o resto veja. Ou pode responder sozinho, e o comportamento normal nem acontece. Por exemplo: um mod pode bloquear um comando perigoso antes de ele rodar, ou reescrever o seu pedido antes de ele chegar ao modelo."
+  },
+  {
+    "chapter": "Exemplos",
+    "title": "Visão limpa",
+    "kind": "demo",
+    "labels": ["esconde o ruído técnico", "mostra uma lista de tarefas", "marca o que terminou", "resumo no final"],
+    "takeaway": "O mesmo trabalho, mostrado só com o que importa para você.",
+    "source": "https://www.youtube.com/watch?v=LDn7rQKIFro",
+    "speech": "Vamos aos exemplos, inspirados no vídeo do Tristan que me apresentou o assunto. O primeiro é uma visão limpa. Muita gente não quer ver cada ferramenta chamada e cada linha de código passando. Quer saber só o que está sendo feito, quanto falta e o que vem depois. O mod intercepta as linhas técnicas, esconde da tela e mostra uma lista simples de tarefas. Cada etapa concluída ganha um tique. No final, você recebe um resumo curto do que foi feito. O trabalho é o mesmo; muda o que você enxerga."
+  },
+  {
+    "chapter": "Exemplos",
+    "title": "Painel de controle",
+    "kind": "demo",
+    "labels": ["modelo com um clique", "esforço com um clique", "barra de status muda na hora", "menos comandos com barra"],
+    "takeaway": "Atalhos visuais para o que você troca toda hora.",
+    "source": "https://www.youtube.com/watch?v=LDn7rQKIFro",
+    "speech": "O segundo exemplo é um painel de controle. Hoje, para trocar o modelo, você digita barra model e escolhe na lista. Para mudar o quanto o Claude pensa, digita barra effort. Funciona, mas cansa. Com um mod, modelo e esforço viram botões numa barra própria, e a linha de status embaixo muda na hora. É uma coisa pequena, mas é exatamente o tipo de atrito do dia a dia que um mod resolve em minutos."
+  },
+  {
+    "chapter": "Exemplos",
+    "title": "Uma doca de agentes",
+    "kind": "demo",
+    "labels": ["escolher quantos agentes", "um cartão por agente", "barra de progresso de cada um", "alerta de consumo da cota"],
+    "takeaway": "Ver e controlar o time de agentes — com um freio no consumo.",
+    "source": "https://www.youtube.com/watch?v=LDn7rQKIFro",
+    "speech": "O terceiro é uma doca de agentes. Num trabalho grande, o Claude divide partes entre agentes auxiliares, que são cópias dele cuidando cada uma de um pedaço. O problema é que normalmente você não vê o que cada um está fazendo, nem escolhe quantos trabalham ao mesmo tempo. Com o mod, você escolhe o tamanho do time, e cada agente ganha um cartão com a sua tarefa e uma barra de progresso. No fim, o Claude junta tudo num resultado só. Um cuidado importante: time grande consome a sua cota muito mais rápido. Um bom mod avisa antes de você exagerar."
+  },
+  {
+    "chapter": "Exemplos",
+    "title": "Geração com confirmação e um jogo",
+    "kind": "demo",
+    "labels": ["imagem e vídeo sem sair do Claude", "mostra o custo antes", "só gera depois do sim", "jogo enquanto espera"],
+    "takeaway": "Mod também serve para proteger crédito — e para se divertir.",
+    "source": "https://www.youtube.com/watch?v=LDn7rQKIFro",
+    "speech": "Mais dois exemplos. Um mod pode ligar o Claude Code a um serviço de geração de imagem e vídeo, usando um conector que você já tem. O detalhe que eu mais gostei: antes de gerar, ele mostra quantos créditos vai gastar e para, esperando o seu sim. Esse é o tipo de regra que eu quero em tudo que custa dinheiro. E dá para fazer coisas só por diversão, como um joguinho de corrida no terminal que, de vez em quando, faz uma pergunta sobre o próprio Claude. Melhor do que ficar olhando a tela esperando terminar."
+  },
+  {
+    "chapter": "Como criar",
+    "title": "Você descreve, ele constrói",
+    "kind": "steps",
+    "labels": ["atualize o Claude Code", "descreva o mod que quer", "aceite o recarregamento", "peça ajustes conversando"],
+    "takeaway": "Criar um mod é uma conversa, não um projeto de programação.",
+    "source": "https://www.youtube.com/watch?v=LDn7rQKIFro",
+    "speech": "Como criar o seu? Primeiro, atualize o Claude Code. Os mods pedem uma versão recente: a da minha máquina é a dois ponto um ponto duzentos e oitenta e nove. Depois, é só descrever o mod que você quer. O Claude Code já vem com uma habilidade que ensina a ele como construir mods. Ele escreve os arquivos e pergunta se você quer ativar o recarregamento automático nesta sessão. Responda que sim. Quando ele terminar, o mod aparece. Não gostou de alguma coisa? Fale como falaria com uma pessoa: o que incomodou e o que mudar. Ele ajusta e recarrega."
+  },
+  {
+    "chapter": "Como criar",
+    "title": "Temporário, até virar plugin",
+    "kind": "concept",
+    "labels": ["mod nasce temporário", "peça para salvar como plugin", "compartilhar via /plugin", "sem custo extra, mas usa a cota"],
+    "takeaway": "Gostou do mod? Salve como plugin, senão ele some com a sessão.",
+    "source": "https://www.youtube.com/watch?v=LDn7rQKIFro",
+    "speech": "Três cuidados. Primeiro: o mod que o Claude cria para você nasce temporário, ligado àquela sessão. Gostou? Peça para ele salvar como plugin e instalar; assim ele aparece sempre que você abrir o Claude Code. Segundo: mod é um tipo de plugin. Se alguém compartilhar um com você, ele se instala pelo comando barra plugin, como qualquer outro. E aqui vale a mesma regra de sempre: só instale o que vem de fonte confiável, porque um mod roda dentro do seu Claude Code. Terceiro: mod não tem custo extra, mas exige um plano pago com Claude Code, e um mod que trabalha em segundo plano também consome a sua cota."
+  },
+  {
+    "chapter": "Fechamento",
+    "title": "Uma função que você descreveu",
+    "kind": "cta",
+    "labels": ["mod = função que você descreveu", "comece por um atrito pequeno", "inema.club"],
+    "takeaway": "Comece pelo atrito que mais te incomoda hoje.",
+    "source": "https://inema.club",
+    "speech": "Resumindo: um mod é uma função que você descreveu e o Claude Code construiu dentro dele mesmo. Minha sugestão é começar pequeno: pense no atrito que mais te incomoda hoje no Claude Code, um comando que você digita toda hora, uma informação que você queria ver sempre, e peça um mod para isso. Cursos, guias e kits sobre Claude Code e agentes estão no INEMA ponto club, abertos e gratuitos. Até o próximo vídeo."
+  }
+]
