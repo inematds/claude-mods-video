@@ -3,5 +3,15 @@
     "url": "https://github.com/inematds/claude-mods-video/releases/download/video-v2.0.0/claude-mods-completo-16x9.mp4",
     "srt": "https://github.com/inematds/claude-mods-video/releases/download/video-v2.0.0/claude-mods-completo-16x9.srt",
     "duration": 293.54
+  },
+  "en": {
+    "url": "https://github.com/inematds/claude-mods-video/releases/download/video-v2.0.0/claude-mods-completo-16x9-en.mp4",
+    "srt": "https://github.com/inematds/claude-mods-video/releases/download/video-v2.0.0/claude-mods-completo-16x9-en.srt",
+    "duration": 333.98
+  },
+  "es": {
+    "url": "https://github.com/inematds/claude-mods-video/releases/download/video-v2.0.0/claude-mods-completo-16x9-es.mp4",
+    "srt": "https://github.com/inematds/claude-mods-video/releases/download/video-v2.0.0/claude-mods-completo-16x9-es.srt",
+    "duration": 319.66
   }
 }

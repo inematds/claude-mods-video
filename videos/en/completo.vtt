@@ -1,0 +1,785 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:01.960
+What if Claude Code had exactly the
+
+2
+00:00:01.960 --> 00:00:04.360
+button, panel, or shortcut you’ve always wanted?
+
+3
+00:00:04.360 --> 00:00:06.060
+Now it
+
+4
+00:00:06.060 --> 00:00:06.820
+can.
+
+5
+00:00:06.820 --> 00:00:09.740
+Claude Code Mods launched on October 1.
+
+6
+00:00:09.740 --> 00:00:11.000
+The idea is simple:
+
+7
+00:00:11.000 --> 00:00:12.660
+you describe a feature you’d like,
+
+8
+00:00:12.660 --> 00:00:14.620
+and Claude Code builds it right inside
+
+9
+00:00:14.620 --> 00:00:15.360
+itself.
+
+10
+00:00:15.360 --> 00:00:16.240
+I’m Nei Maldaner,
+
+11
+00:00:16.240 --> 00:00:18.260
+and in this video I’ll explain what
+
+12
+00:00:18.260 --> 00:00:18.940
+a mod is,
+
+13
+00:00:18.940 --> 00:00:21.220
+how it works under the hood,
+
+14
+00:00:21.220 --> 00:00:22.520
+what you can do with it,
+
+15
+00:00:22.520 --> 00:00:24.060
+and how to create your own,
+
+16
+00:00:24.060 --> 00:00:26.340
+along with a few precautions worth taking.
+
+17
+00:00:26.340 --> 00:00:28.480
+A mod is a small add-on that
+
+18
+00:00:28.480 --> 00:00:29.600
+changes two things:
+
+19
+00:00:29.600 --> 00:00:31.420
+how Claude Code appears on your screen
+
+20
+00:00:31.420 --> 00:00:32.820
+and how it works.
+
+21
+00:00:32.820 --> 00:00:34.860
+It runs in the terminal and in
+
+22
+00:00:34.860 --> 00:00:37.080
+the Code tab of the desktop app.
+
+23
+00:00:37.080 --> 00:00:38.800
+One detail to keep in mind:
+
+24
+00:00:38.800 --> 00:00:41.100
+it doesn’t work in regular Claude chat.
+
+25
+00:00:41.100 --> 00:00:42.720
+Mods are for Claude Code.
+
+26
+00:00:42.720 --> 00:00:44.120
+If you’ve already updated,
+
+27
+00:00:44.120 --> 00:00:44.800
+the feature is there,
+
+28
+00:00:44.800 --> 00:00:45.540
+ready to use,
+
+29
+00:00:45.540 --> 00:00:47.480
+with nothing extra to install.
+
+30
+00:00:47.480 --> 00:00:48.700
+You might be thinking:
+
+31
+00:00:48.700 --> 00:00:50.780
+but I already have skills and connectors.
+
+32
+00:00:50.780 --> 00:00:52.860
+You do, and they’re still useful.
+
+33
+00:00:52.860 --> 00:00:54.220
+They just act from the outside.
+
+34
+00:00:54.220 --> 00:00:56.400
+A skill teaches Claude how to do
+
+35
+00:00:56.400 --> 00:00:57.680
+a task.
+
+36
+00:00:57.700 --> 00:01:00.860
+A connector links Claude to another app.
+
+37
+00:01:00.860 --> 00:01:02.020
+A mod is different:
+
+38
+00:01:02.020 --> 00:01:04.420
+it runs inside Claude Code itself.
+
+39
+00:01:04.420 --> 00:01:06.700
+That means it can change what you
+
+40
+00:01:06.700 --> 00:01:07.280
+see.
+
+41
+00:01:07.280 --> 00:01:08.380
+You can add a button,
+
+42
+00:01:08.380 --> 00:01:09.680
+open a side panel,
+
+43
+00:01:09.680 --> 00:01:11.660
+create a bar above the text input,
+
+44
+00:01:11.660 --> 00:01:12.660
+show an alert,
+
+45
+00:01:12.660 --> 00:01:14.060
+add a new slash command,
+
+46
+00:01:14.060 --> 00:01:15.800
+or even make a little game to
+
+47
+00:01:15.800 --> 00:01:18.040
+pass the time while Claude works.
+
+48
+00:01:18.040 --> 00:01:19.920
+How can a mod change the interface?
+
+49
+00:01:19.920 --> 00:01:21.540
+Every time Claude does something,
+
+50
+00:01:21.540 --> 00:01:23.000
+like running a command,
+
+51
+00:01:23.000 --> 00:01:23.740
+calling a tool,
+
+52
+00:01:23.740 --> 00:01:25.200
+or receiving your request,
+
+53
+00:01:25.200 --> 00:01:26.580
+it sends out a signal,
+
+54
+00:01:26.580 --> 00:01:27.480
+an event.
+
+55
+00:01:27.480 --> 00:01:28.800
+A mod is a small piece of
+
+56
+00:01:28.800 --> 00:01:30.780
+code that listens for those events.
+
+57
+00:01:30.780 --> 00:01:31.920
+When one comes in,
+
+58
+00:01:31.920 --> 00:01:33.260
+it has three options.
+
+59
+00:01:33.260 --> 00:01:35.620
+It can simply observe and let things
+
+60
+00:01:35.620 --> 00:01:36.220
+continue.
+
+61
+00:01:36.220 --> 00:01:38.560
+It can change the event before anything
+
+62
+00:01:38.560 --> 00:01:39.540
+else sees it.
+
+63
+00:01:39.540 --> 00:01:41.760
+Or it can respond on its own,
+
+64
+00:01:41.760 --> 00:01:43.900
+so the normal behavior never happens.
+
+65
+00:01:43.900 --> 00:01:46.300
+For example, a mod can block a
+
+66
+00:01:46.300 --> 00:01:47.660
+dangerous command before it runs,
+
+67
+00:01:47.660 --> 00:01:49.800
+or rewrite your request before it reaches
+
+68
+00:01:49.800 --> 00:01:50.340
+the model.
+
+69
+00:01:50.340 --> 00:01:51.560
+Let’s look at some examples,
+
+70
+00:01:51.560 --> 00:01:53.340
+inspired by Tristan’s video,
+
+71
+00:01:53.340 --> 00:01:55.460
+which introduced me to the topic.
+
+72
+00:01:55.460 --> 00:01:57.500
+The first is a cleaner view.
+
+73
+00:01:57.500 --> 00:01:58.980
+Many people don’t want to see every
+
+74
+00:01:58.980 --> 00:02:00.420
+tool call and line of code go
+
+75
+00:02:00.420 --> 00:02:00.820
+by.
+
+76
+00:02:00.820 --> 00:02:02.540
+They just want to know what’s being
+
+77
+00:02:02.540 --> 00:02:04.020
+done, how much is left,
+
+78
+00:02:04.020 --> 00:02:06.040
+and what comes next.
+
+79
+00:02:06.260 --> 00:02:08.480
+The mod intercepts the technical lines,
+
+80
+00:02:08.480 --> 00:02:09.600
+hides them from view,
+
+81
+00:02:09.600 --> 00:02:11.400
+and shows a simple task list.
+
+82
+00:02:11.400 --> 00:02:13.920
+Each completed step gets a checkmark.
+
+83
+00:02:13.920 --> 00:02:14.820
+At the end,
+
+84
+00:02:14.820 --> 00:02:16.380
+you get a short summary of what
+
+85
+00:02:16.380 --> 00:02:16.960
+was done.
+
+86
+00:02:16.960 --> 00:02:18.140
+The work is the same;
+
+87
+00:02:18.140 --> 00:02:19.840
+what you see is different.
+
+88
+00:02:19.840 --> 00:02:22.680
+The second example is a control panel.
+
+89
+00:02:22.680 --> 00:02:24.560
+Today, to
+
+90
+00:02:24.640 --> 00:02:27.640
+switch models, you type slash model and
+
+91
+00:02:27.640 --> 00:02:28.940
+choose from the list.
+
+92
+00:02:28.940 --> 00:02:30.640
+To change how much Claude thinks,
+
+93
+00:02:30.640 --> 00:02:32.900
+you type slash effort.
+
+94
+00:02:32.900 --> 00:02:35.700
+It works, but it gets tiring.
+
+95
+00:02:35.700 --> 00:02:36.620
+With a mod,
+
+96
+00:02:36.620 --> 00:02:39.480
+model and effort become buttons on their
+
+97
+00:02:39.480 --> 00:02:41.520
+own bar, and the status line below
+
+98
+00:02:41.520 --> 00:02:43.100
+updates instantly.
+
+99
+00:02:43.100 --> 00:02:43.880
+It’s a small thing,
+
+100
+00:02:43.880 --> 00:02:45.860
+but it’s exactly the kind of everyday
+
+101
+00:02:45.860 --> 00:02:48.160
+friction a mod can fix in minutes.
+
+102
+00:02:48.400 --> 00:02:50.840
+The third example is an agent dock.
+
+103
+00:02:50.840 --> 00:02:52.100
+On a big task,
+
+104
+00:02:52.100 --> 00:02:54.580
+Claude splits the work among helper agents,
+
+105
+00:02:54.580 --> 00:02:57.080
+copies of itself that each handle one
+
+106
+00:02:57.080 --> 00:02:58.080
+part.
+
+107
+00:02:58.080 --> 00:02:59.800
+The problem is that you usually can’t
+
+108
+00:02:59.800 --> 00:03:01.520
+see what each one is doing or
+
+109
+00:03:01.520 --> 00:03:02.820
+choose how many work at the same
+
+110
+00:03:02.820 --> 00:03:03.260
+time.
+
+111
+00:03:03.260 --> 00:03:04.240
+With the mod,
+
+112
+00:03:04.240 --> 00:03:05.500
+you choose the team size,
+
+113
+00:03:05.500 --> 00:03:08.400
+and each agent gets a card with
+
+114
+00:03:08.400 --> 00:03:10.320
+its task and a progress bar.
+
+115
+00:03:10.320 --> 00:03:11.260
+At the end,
+
+116
+00:03:11.260 --> 00:03:14.760
+Claude brings everything together into one result.
+
+117
+00:03:15.000 --> 00:03:16.740
+One important thing to keep in mind:
+
+118
+00:03:16.740 --> 00:03:18.860
+a big team uses up your limit
+
+119
+00:03:18.860 --> 00:03:19.720
+much faster.
+
+120
+00:03:19.720 --> 00:03:21.400
+A good mod warns you before you
+
+121
+00:03:21.400 --> 00:03:22.400
+go too far.
+
+122
+00:03:22.400 --> 00:03:24.260
+Two more examples.
+
+123
+00:03:24.540 --> 00:03:26.740
+A mod can connect Claude Code to
+
+124
+00:03:26.740 --> 00:03:28.920
+an image and video generation service using
+
+125
+00:03:28.920 --> 00:03:30.340
+a connector you already have.
+
+126
+00:03:30.340 --> 00:03:32.060
+Here’s the part I liked most:
+
+127
+00:03:32.060 --> 00:03:33.700
+before generating anything,
+
+128
+00:03:33.700 --> 00:03:35.380
+it shows how many credits it will
+
+129
+00:03:35.380 --> 00:03:37.080
+use and waits for you to say
+
+130
+00:03:37.080 --> 00:03:37.560
+yes.
+
+131
+00:03:37.560 --> 00:03:39.040
+That’s the kind of rule I want
+
+132
+00:03:39.040 --> 00:03:40.840
+for anything that costs money.
+
+133
+00:03:40.840 --> 00:03:42.480
+And you can make things just for
+
+134
+00:03:42.480 --> 00:03:44.360
+fun, like a little racing game in
+
+135
+00:03:44.360 --> 00:03:46.840
+the terminal that occasionally asks you a
+
+136
+00:03:46.840 --> 00:03:48.340
+question about Claude itself.
+
+137
+00:03:48.340 --> 00:03:50.420
+Better than staring at the screen while
+
+138
+00:03:50.420 --> 00:03:51.280
+you wait.
+
+139
+00:03:51.280 --> 00:03:53.140
+How do you create your own?
+
+140
+00:03:53.140 --> 00:03:55.060
+First, update Claude Code.
+
+141
+00:03:55.060 --> 00:03:57.140
+Mods require a recent version;
+
+142
+00:03:57.140 --> 00:03:59.700
+the one on my machine is
+
+143
+00:04:00.330 --> 00:04:01.530
+2.1.289.
+
+144
+00:04:01.560 --> 00:04:04.450
+Then just describe the mod you want.
+
+145
+00:04:04.450 --> 00:04:06.760
+Claude Code comes with a skill that
+
+146
+00:04:06.760 --> 00:04:08.500
+teaches it how to build mods.
+
+147
+00:04:08.500 --> 00:04:10.220
+It writes
+
+148
+00:04:10.640 --> 00:04:13.040
+the files and asks
+
+149
+00:04:13.040 --> 00:04:15.260
+if you want to enable automatic reloading
+
+150
+00:04:15.260 --> 00:04:16.340
+in this session.
+
+151
+00:04:16.340 --> 00:04:17.900
+Say yes.
+
+152
+00:04:17.900 --> 00:04:18.980
+When it’s done,
+
+153
+00:04:18.980 --> 00:04:20.000
+the mod appears.
+
+154
+00:04:20.000 --> 00:04:21.240
+Don’t like something?
+
+155
+00:04:21.240 --> 00:04:22.780
+Tell it the way you’d tell a
+
+156
+00:04:22.780 --> 00:04:24.880
+person: what bothered you and what to
+
+157
+00:04:24.880 --> 00:04:25.400
+change.
+
+158
+00:04:25.400 --> 00:04:28.400
+It adjusts the mod and reloads it.
+
+159
+00:04:28.400 --> 00:04:30.320
+Three things to keep in mind.
+
+160
+00:04:30.320 --> 00:04:33.460
+First: a mod Claude creates for you
+
+161
+00:04:33.460 --> 00:04:34.960
+starts out as temporary,
+
+162
+00:04:34.960 --> 00:04:36.780
+tied to that session.
+
+163
+00:04:36.780 --> 00:04:37.580
+Like it?
+
+164
+00:04:37.580 --> 00:04:39.500
+Ask Claude to save it as a
+
+165
+00:04:39.500 --> 00:04:40.660
+plugin and install it,
+
+166
+00:04:40.660 --> 00:04:42.380
+so it’s there every time you open
+
+167
+00:04:42.380 --> 00:04:43.720
+Claude Code.
+
+168
+00:04:44.320 --> 00:04:46.300
+Second: a mod is a type of
+
+169
+00:04:46.300 --> 00:04:46.960
+plugin.
+
+170
+00:04:46.960 --> 00:04:49.000
+If someone shares one with you,
+
+171
+00:04:49.000 --> 00:04:51.620
+install it with the slash plugin command,
+
+172
+00:04:51.620 --> 00:04:53.280
+like any other plugin.
+
+173
+00:04:53.280 --> 00:04:54.760
+And the usual rule applies:
+
+174
+00:04:54.760 --> 00:04:56.980
+only install mods from trusted sources,
+
+175
+00:04:56.980 --> 00:04:58.900
+because a mod runs inside your Claude
+
+176
+00:04:58.900 --> 00:05:00.100
+Code.
+
+177
+00:05:00.920 --> 00:05:03.020
+Third: mods have no extra cost,
+
+178
+00:05:03.020 --> 00:05:04.730
+but you need a paid plan with
+
+179
+00:05:04.730 --> 00:05:06.500
+Claude Code, and a mod that runs
+
+180
+00:05:06.500 --> 00:05:08.360
+in the background also uses up your
+
+181
+00:05:08.360 --> 00:05:08.640
+limit.
+
+182
+00:05:08.640 --> 00:05:09.800
+To sum up:
+
+183
+00:05:09.800 --> 00:05:11.660
+a mod is a feature you describe,
+
+184
+00:05:11.660 --> 00:05:13.700
+and Claude Code builds it right inside
+
+185
+00:05:13.700 --> 00:05:14.440
+itself.
+
+186
+00:05:14.440 --> 00:05:16.680
+My suggestion is to start small:
+
+187
+00:05:16.680 --> 00:05:18.140
+think of the thing that bothers you
+
+188
+00:05:18.140 --> 00:05:19.540
+most in Claude Code today,
+
+189
+00:05:19.540 --> 00:05:21.260
+a command you type all the time
+
+190
+00:05:21.260 --> 00:05:23.140
+or information you wish you could always
+
+191
+00:05:23.140 --> 00:05:24.780
+see, and ask for a mod to
+
+192
+00:05:24.780 --> 00:05:25.660
+do that.
+
+193
+00:05:25.660 --> 00:05:28.240
+Courses, guides, and kits about Claude Code
+
+194
+00:05:28.240 --> 00:05:30.340
+and agents are on INEMA dot club,
+
+195
+00:05:30.340 --> 00:05:32.240
+open and free.
+
+196
+00:05:32.240 --> 00:05:33.880
+See you in the next video.

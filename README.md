@@ -2,7 +2,7 @@
 
 Vídeo explicativo, com avatar e voz do Nei, sobre os **Mods do Claude Code** (lançados em 1º de outubro de 2026): o que é um mod, como ele funciona por eventos (observar, alterar ou assumir), cinco exemplos, como criar o seu conversando com o Claude Code e os cuidados — temporário até virar plugin, só de fonte confiável e consumo de cota.
 
-**[▶ Assistir](https://inematds.github.io/claude-mods-video/videos/)**
+**[▶ Assistir](https://inematds.github.io/claude-mods-video/videos/)** · **[▶ Watch in English](https://inematds.github.io/claude-mods-video/videos/en/)** · **[▶ Ver en español](https://inematds.github.io/claude-mods-video/videos/es/)**
 
 ## Conteúdo
 
@@ -20,6 +20,6 @@ Vídeo explicativo, com avatar e voz do Nei, sobre os **Mods do Claude Code** (l
 
 ## Produção
 
-Roteiro em `roteiro/pt.json`. Avatar gerado pelo estúdio do HeyGen (assinatura, sem API), animações sincronizadas à fala pelo [Explicavideos v2](https://inematds.github.io/explicavideos/guia/), publicação por `scripts/publica.py` (MP4 e SRT no Release `video-v2.0.0`, player com capítulos em `videos/`).
+Roteiro em `roteiro/pt.json`. Avatar gerado pelo estúdio do HeyGen (assinatura, sem API), animações sincronizadas à fala pelo [Explicavideos v2](https://inematds.github.io/explicavideos/guia/), publicação por `scripts/publica.py` (MP4 e SRT no Release `video-v2.0.0`, player com capítulos em `videos/`). Versões EN/ES: roteiro traduzido pelo Codex (assinatura), avatar falando no idioma, publicadas por `scripts/publica_idiomas.py` em `videos/en/` e `videos/es/`.
 
 Exemplos inspirados no [vídeo do Tristan sobre Claude Mods](https://www.youtube.com/watch?v=LDn7rQKIFro); o roteiro é original. Recurso educacional independente, não é produto da Anthropic. Conteúdo aberto do [INEMA.CLUB](https://inema.club).
